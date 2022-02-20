@@ -1,0 +1,29 @@
+{
+  "name": "@jslib-book/cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "jslibbook": "./bin/index.js"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jslib-book/jslib-book-cli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jslib-book/jslib-book-cli/issues"
+  },
+  "homepage": "https://github.com/jslib-book/jslib-book-cli#readme",
+  "dependencies": {
+    "yargs": "^17.3.1"
+  }
+}
