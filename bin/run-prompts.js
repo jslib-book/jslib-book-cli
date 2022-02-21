@@ -56,6 +56,12 @@ function runInitPrompts(pathname, argv) {
             name: "commitlint",
             choices: ["commitlint", "standard-version"],
             default: ["commitlint"],
+            filter: function (values) {
+                return values.reduce(
+                    (res, cur) => ({ ...res, [cur]: true }),
+                    {}
+                );
+            },
         },
         {
             type: "checkbox",
@@ -63,6 +69,12 @@ function runInitPrompts(pathname, argv) {
             name: "test",
             choices: ["mocha", "puppeteer"],
             default: ["mocha"],
+            filter: function (values) {
+                return values.reduce(
+                    (res, cur) => ({ ...res, [cur]: true }),
+                    {}
+                );
+            },
         },
         {
             type: "confirm",
