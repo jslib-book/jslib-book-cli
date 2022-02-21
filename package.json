@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/jslib-book/jslib-book-cli#readme",
   "dependencies": {
+    "inquirer": "^8.2.0",
     "yargs": "^17.3.1"
   }
 }
