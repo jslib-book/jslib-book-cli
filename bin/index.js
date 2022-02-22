@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const yargs = require("yargs");
 const { runInitPrompts } = require("./run-prompts");
+const { init } = require("./init");
 
 yargs
     .usage("usage: jslibbook [options]")
@@ -22,8 +23,7 @@ yargs
         },
         function (argv) {
             runInitPrompts(argv._[1], yargs.argv).then(function (answers) {
-                console.log(answers);
-                // init(argv, answers);
+                init(argv, answers);
             });
         }
     )
