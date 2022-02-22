@@ -1,5 +1,6 @@
 const { checkProjectExists } = require("./util/file");
 const root = require("./root");
+const build = require("./build");
 
 function init(argv, answers) {
     const cmdPath = process.cwd();
@@ -22,7 +23,8 @@ function init(argv, answers) {
         return;
     }
 
-    root.init(cmdPath, pathname, option)
+    root.init(cmdPath, pathname, option);
+    build.init(cmdPath, pathname, option);
 }
 
-exports.init = init;
+exports.init = init;``
