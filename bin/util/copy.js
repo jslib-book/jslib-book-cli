@@ -3,7 +3,7 @@ const path = require('path');
 
 const copydir = require('copy-dir');
 const template = require('template_js');
-const { extend } = require('@jslib-book/extend');
+const { extendDeep } = require('@jsmini/extend');
 
 
 function isTemplate(pathname) {
@@ -59,7 +59,7 @@ function copyTmpl(from, to, data = {}) {
 function mergeObj2JSON(object, to) {
     const json = JSON.parse(fs.readFileSync(to, { encoding: 'utf8' }));
     
-    extend(json, object);
+    extendDeep(json, object);
     
     fs.writeFileSync(to, JSON.stringify(json, null, '  '), { encoding: 'utf8' });
 }

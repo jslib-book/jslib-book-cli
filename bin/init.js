@@ -1,6 +1,7 @@
 const { checkProjectExists } = require("./util/file");
 const root = require("./root");
 const build = require("./build");
+const prettier = require("./prettier");
 
 function init(argv, answers) {
     const cmdPath = process.cwd();
@@ -25,6 +26,7 @@ function init(argv, answers) {
 
     root.init(cmdPath, pathname, option);
     build.init(cmdPath, pathname, option);
+    prettier.init(cmdPath, pathname, option);
 }
 
 exports.init = init;``
