@@ -6,6 +6,7 @@ const eslint = require("./eslint");
 const commitlint = require("./commitlint");
 const test = require("./test");
 const husky = require("./husky");
+const ci = require("./ci");
 
 function init(argv, answers) {
     const cmdPath = process.cwd();
@@ -35,6 +36,7 @@ function init(argv, answers) {
     commitlint.init(cmdPath, pathname, option);
     test.init(cmdPath, pathname, option);
     husky.init(cmdPath, pathname, option);
+    ci.init(cmdPath, pathname, option);
 }
 
 exports.init = init;``
