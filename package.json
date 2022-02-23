@@ -9,6 +9,9 @@
   "bin": {
     "jslibbook": "./bin/index.js"
   },
+  "files": [
+    "/bin"
+  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
@@ -17,8 +20,8 @@
     "type": "git",
     "url": "git+https://github.com/jslib-book/jslib-book-cli.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "yanhaijing",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jslib-book/jslib-book-cli/issues"
   },
