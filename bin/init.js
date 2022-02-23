@@ -4,6 +4,7 @@ const build = require("./build");
 const prettier = require("./prettier");
 const eslint = require("./eslint");
 const commitlint = require("./commitlint");
+const test = require("./test");
 
 function init(argv, answers) {
     const cmdPath = process.cwd();
@@ -31,6 +32,7 @@ function init(argv, answers) {
     prettier.init(cmdPath, pathname, option);
     eslint.init(cmdPath, pathname, option);
     commitlint.init(cmdPath, pathname, option);
+    test.init(cmdPath, pathname, option);
 }
 
 exports.init = init;``
