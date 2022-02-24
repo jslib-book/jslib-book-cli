@@ -16,7 +16,7 @@ function init(cmdPath, name, option) {
         );
     }
 
-    if (option.commitlint.eslint) {
+    if (option.eslint) {
         copyTmpl(
             path.resolve(__dirname, `./template/.lintstagedrc.js`),
             path.resolve(cmdPath, name, ".lintstagedrc.js"),
