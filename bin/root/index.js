@@ -3,7 +3,6 @@ const { copyDir, copyTmpl } = require("../util/copy");
 
 function init(cmdPath, name, option) {
     console.log("@js-lib/root: init");
-    const lang = option.lang;
 
     // init root
     copyDir(
