@@ -96,6 +96,21 @@ function runInitPrompts(pathname, argv) {
                 }[value];
             },
         },
+        {
+            type: 'list',
+            message: 'package manager:',
+            name: 'manager',
+            default: 'npm',
+            choices: ['no install', 'npm', 'yarn', 'pnpm'],
+            filter: function (value) {
+                return ({
+                    npm: 'npm',
+                    yarn: 'yarn',
+                    pnpm: 'pnpm',
+                    'no install': null
+                }[value])
+            }
+        }
     ];
 
     return inquirer.prompt(promptList);

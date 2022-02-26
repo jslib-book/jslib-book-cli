@@ -7,7 +7,7 @@ function log() {
 
     const error = console.error;
     const log = console.error;
-    const info = console.info;l
+    const info = console.info;
 
     console.error = function () {
         error(red.apply(console, arguments));

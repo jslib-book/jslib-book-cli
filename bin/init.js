@@ -1,3 +1,4 @@
+const ora = require("ora");
 const { checkProjectExists } = require("./util/file");
 const root = require("./root");
 const build = require("./build");
@@ -7,6 +8,9 @@ const commitlint = require("./commitlint");
 const test = require("./test");
 const husky = require("./husky");
 const ci = require("./ci");
+const manager = require("./manager");
+
+const spinner = ora();
 
 function init(argv, answers) {
     const cmdPath = process.cwd();
@@ -37,6 +41,14 @@ function init(argv, answers) {
     test.init(cmdPath, pathname, option);
     husky.init(cmdPath, pathname, option);
     ci.init(cmdPath, pathname, option);
+    manager.init(cmdPath, pathname, option).then(
+        () => {
+            spinner.succeed("Create lib successfully");
+        },
+        () => {
+            spinner.fail("Create lib failure");
+        }
+    );
 }
 
-exports.init = init;``
+exports.init = init;
