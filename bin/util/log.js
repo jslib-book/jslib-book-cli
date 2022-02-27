@@ -1,25 +1,23 @@
-const chalk = require('chalk');
+const chalk = require("chalk");
 
-function log() {
-    const red = chalk.bold.red;
-    const green = chalk.bold.green;
-    const blue = chalk.bold.blue;
+const error = console.error;
+const log = console.error;
+const info = console.info;
+const warn = console.warn;
 
-    const error = console.error;
-    const log = console.error;
-    const info = console.info;
-
-    console.error = function () {
-        error(red.apply(console, arguments));
+function init() {
+    console.success = function (...args) {
+        log(chalk.bold.green(...args));
     };
-
-    console.log = function () {
-        log(green.apply(console, arguments));
+    console.error = function (...args) {
+        error(chalk.bold.red(...args));
     };
-
-    console.info = function (){ 
-        info(blue.apply(console, arguments));
+    console.warn = function (...args) {
+        warn(chalk.hex("#FFA500")(...args));
+    };
+    console.info = function (...args) {
+        info(chalk.bold.blue(...args));
     };
 }
 
-exports.log = log;
+exports.init = init;

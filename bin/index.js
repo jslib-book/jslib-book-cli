@@ -2,7 +2,7 @@
 const yargs = require("yargs");
 const { runInitPrompts } = require("./run-prompts");
 const { init } = require("./init");
-const { log } = require("./util/log");
+const { init: log } = require("./util/log");
 
 log();
 
