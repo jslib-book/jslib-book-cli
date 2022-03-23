@@ -5,7 +5,7 @@ function init(cmdPath, name, option) {
     if (!option.husky) {
         return;
     }
-    
+
     console.log("@js-lib/husky: init");
 
     if (option.commitlint.commitlint) {
